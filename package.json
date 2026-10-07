@@ -1,0 +1,35 @@
+{
+  "name": "mp3-encoder",
+  "version": "0.1.0",
+  "description": "Lean from-scratch MPEG-1 Layer III (MP3) encoder for 16-bit PCM WAV files",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "mp3enc": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --project unit",
+    "test:acceptance": "npm run build && vitest run --project acceptance",
+    "test:all": "npm run build && vitest run",
+    "coverage": "vitest run --project unit --coverage",
+    "mp3enc": "tsx src/cli.ts",
+    "check": "npm run typecheck && npm run lint && npm run test:all"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.4",
+    "@vitest/coverage-v8": "^5.0.3",
+    "eslint": "^10.12.0",
+    "mpg123-decoder": "^1.0.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
+  }
+}
