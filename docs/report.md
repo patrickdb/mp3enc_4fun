@@ -17,6 +17,23 @@ into MPEG-1 Layer III files at constant bitrates or VBR. No codec libraries are 
 | Playable in any MP3 player | Verified with the mpg123 decoder and a strict bitstream validator (see below) |
 | Encode in under half of the audio duration | 0.18-0.22x real time in every mode; worst case (full-scale white noise) about 0.3x |
 
+## Used Prompt
+I like you to build for me a commandline tool to encode raw audiofiles like .wav into old fashioned .mp3 of my good old days. You are not allowed to use libraries that     
+  include prebaked algorithms. It is your job to do research to this algorithms on the internet. Only research into the algorithm how a wave form is transformed in           
+  128,169,192, 256 and vbr bitrates with mp3 compression. You are allowed to use libraries for stdin, stdio stuf, file reading etcetera: The default librarites that a        
+  programming language uses to interact with its users and enables filestorage and reading. For our product we use the programming language typescript, that can be executed  
+  on the commandline.
+ 
+For the quality checks use a static code analysis tool which is used commonly in the industry for typescript. Rules should meet industry standards.
+ 
+Follow a test driven design. Each piece of production code should have a test first, then production code is written, and then it is checked if the test passed. Continue the process untill the test passes.
+ 
+Have also acceptance test criteria for the functionality i just described in the product overview.
+ 
+Continue this project until all acceptance criteria test have passed, all unit test have passed, and important you have encoded succesfully a wave file into a mp3. Where you have tested the mp3 if it is conform functionality and can be played in a random mp3 player.
+ 
+Before starting with jour job. you can ask me for some clarifications on the functional requirements if they are not yet clear enough. The encoder should be lean & mean and does not have much more than what i asked for. Just enough functionality to make a succesfull compression of a wave file into an mp3. The algorithm you use you write yourself from scratch, based on research you into the topic of publicly available information on the mp3 format and support for the asked requirements. One important notice: Also include a performance measurement and make sure that the compression algorithm finishes within half of the time of the duration of the wave file.
+
 ## Results
 
 121 unit tests and 44 acceptance tests pass. Unit-test coverage is 100% of lines and functions.
